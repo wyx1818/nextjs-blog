@@ -1,5 +1,0 @@
-{
-  "**/*.{md,mdx}": "node ./script/updateLastModify.js",
-  "*.js": "eslint --cache --fix",
-  "*.{js,css,md}": "prettier --write"
-}
