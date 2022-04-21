@@ -1,5 +1,6 @@
 import * as path from 'path';
 import * as React from 'react';
+import Head from 'next/head';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { getMDXComponent } from 'mdx-bundler/client';
 
@@ -22,12 +23,15 @@ export default function Post(props: PostPropTypes) {
 
   return (
     <>
-      <header>
-        <h1>{frontmatter.title}</h1>
-        <p>{frontmatter.description}</p>
-      </header>
-      <main>
-        <Component />
+      <Head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/dark.min.css" />
+        <title>zuiyu | {frontmatter.title}</title>
+      </Head>
+
+      <main className="p-2">
+        <article className="prose mx-auto">
+          <Component />
+        </article>
       </main>
     </>
   );
