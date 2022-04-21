@@ -28,8 +28,8 @@ export default function Post(props: PostPropTypes) {
         <title>zuiyu | {frontmatter.title}</title>
       </Head>
 
-      <main className="p-2">
-        <article className="prose mx-auto">
+      <main className="p-2 dark:bg-slate-900">
+        <article className="prose mx-auto dark:prose-invert">
           <Component />
         </article>
       </main>

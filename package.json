@@ -1,6 +1,12 @@
 {
-  "name": "nexjt-blog",
+  "name": "nextjs-blog",
   "version": "0.1.0",
+  "author": "Zuiyu <zuiyu1818@gmail.com> (https://blog.zuiyu1818.cn)",
+  "description": "The blog that build with MDX2 and Next.js",
+  "keywords": [
+    "MDX2",
+    "nextjs"
+  ],
   "private": true,
   "scripts": {
     "dev": "next dev",
