@@ -50,8 +50,8 @@
     "extends": "next/core-web-vitals"
   },
   "lint-staged": {
-    "**/*.{md,mdx}": "node ./script/updateLastModify.js",
-    "*.js": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --write"
+    "**/*.{md,mdx}": "node ./script/updateFrontmatter.js",
+    "*.{js,ts,jsx,tsx}": "eslint --cache --fix",
+    "*.{js,css,md,mdx,jsx,tsx}": "prettier --write"
   }
 }
