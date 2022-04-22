@@ -24,7 +24,6 @@ export default function Post(props: PostPropTypes) {
   return (
     <>
       <Head>
-        <link rel="stylesheet" href="/dark.min.css" />
         <title>zuiyu | {frontmatter.title}</title>
       </Head>
 

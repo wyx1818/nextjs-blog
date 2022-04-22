@@ -1,3 +1,6 @@
+/* highlight.js css  */
+@import 'dark.min.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
