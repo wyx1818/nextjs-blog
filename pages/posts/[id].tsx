@@ -24,7 +24,7 @@ export default function Post(props: PostPropTypes) {
   return (
     <>
       <Head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/dark.min.css" />
+        <link rel="stylesheet" href="/dark.min.css" />
         <title>zuiyu | {frontmatter.title}</title>
       </Head>
 
