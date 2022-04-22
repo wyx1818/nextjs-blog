@@ -1,5 +1,7 @@
-/* highlight.js css  */
-@import 'dark.min.css';
+/* highlight.js css */
+@import 'hljs.css';
+/* custom markdown */
+@import 'markdown.css';
 
 @tailwind base;
 @tailwind components;
