@@ -2,24 +2,13 @@ import * as path from 'path';
 import * as React from 'react';
 import Head from 'next/head';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { getMDXComponent } from 'mdx-bundler/client';
 
-import { getMdxData } from 'utils/mdxBundler';
+import { getMdxData, MDXDate } from 'utils/mdxBundler';
 import { getPostPaths } from 'utils/posts';
+import MDXMarkdown from 'components/MDXMarkdown';
 
-interface PostPropTypes {
-  code: string;
-  frontmatter: {
-    title: string;
-    description: string;
-  };
-}
-
-export default function Post(props: PostPropTypes) {
+export default function Post(props: MDXDate) {
   const { code, frontmatter } = props;
-  // it's generally a good idea to memoize this function call to
-  // avoid re-creating the component every render.
-  const Component = React.useMemo(() => getMDXComponent(code), [code]);
 
   return (
     <>
@@ -28,9 +17,7 @@ export default function Post(props: PostPropTypes) {
       </Head>
 
       <main className="px-4 sm:px-0 dark:bg-slate-900">
-        <article className="prose mx-auto dark:prose-invert">
-          <Component />
-        </article>
+        <MDXMarkdown code={code} />
       </main>
     </>
   );
