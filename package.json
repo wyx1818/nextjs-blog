@@ -18,12 +18,14 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "next": "12.1.5",
     "mdx-bundler": "^9.0.0",
+    "next": "12.1.5",
     "react": "18.0.0",
     "react-dom": "18.0.0",
+    "rehype-autolink-headings": "^6.1.1",
     "rehype-highlight": "^5.0.2",
     "rehype-prism-plus": "^1.3.2",
+    "rehype-slug": "^5.0.1",
     "remark-gfm": "^3.0.1",
     "tailwindcss": "^3.0.24"
   },
@@ -54,6 +56,6 @@
   "lint-staged": {
     "**/*.{md,mdx}": "node ./script/updateFrontmatter.js",
     "*.{js,ts,jsx,tsx}": "eslint --cache --fix",
-    "*.{js,css,md,mdx,jsx,tsx}": "prettier --write"
+    "*.{js,ts,jsx,tsx,css,md,mdx}": "prettier --write"
   }
 }

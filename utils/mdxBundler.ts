@@ -3,7 +3,9 @@ import { bundleMDX } from 'mdx-bundler';
 // Remark packages
 import remarkGfm from 'remark-gfm'; // Tables, footnotes, strikethrough, task lists, literal URLs.
 // Rehype packages
-import rehypePrismPlus from 'rehype-prism-plus'
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypePrismPlus from 'rehype-prism-plus';
 
 export async function getMdxData(mdxFilePath: string) {
   const fileContent = fs.readFileSync(mdxFilePath, 'utf-8');
@@ -15,7 +17,12 @@ export async function getMdxData(mdxFilePath: string) {
       // The syntax might look weird, but it protects you in case we add/remove
       // plugins in the future.
       options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkGfm];
-      options.rehypePlugins = [...(options.rehypePlugins ?? []), rehypePrismPlus];
+      options.rehypePlugins = [
+        ...(options.rehypePlugins ?? []),
+        rehypeSlug,
+        [rehypeAutolinkHeadings, { behavior: 'append' }],
+        rehypePrismPlus,
+      ];
 
       return options;
     },

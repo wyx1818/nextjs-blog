@@ -1,11 +1,17 @@
 import * as React from 'react';
-import { getMDXComponent } from 'mdx-bundler/client';
+import { ComponentMap, getMDXComponent } from 'mdx-bundler/client';
+
+import CustomLink from './Link';
+
+const MDXComponents: ComponentMap = {
+  a: CustomLink,
+};
 
 interface MDXMarkdownPropTypes {
   code: string;
 }
 
-export default function MDXMarkdown(props: MDXMarkdownPropTypes) {
+export default function MDXComponent(props: MDXMarkdownPropTypes) {
   const { code } = props;
 
   // it's generally a good idea to memoize this function call to
@@ -14,7 +20,7 @@ export default function MDXMarkdown(props: MDXMarkdownPropTypes) {
 
   return (
     <article className="prose mx-auto dark:prose-invert">
-      <Component />
+      <Component components={MDXComponents} />
     </article>
   );
 }

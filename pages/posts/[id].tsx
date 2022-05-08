@@ -5,7 +5,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 
 import { getMdxData, MDXDate } from 'utils/mdxBundler';
 import { getPostPaths } from 'utils/posts';
-import MDXMarkdown from 'components/MDXMarkdown';
+import MDXComponent from '@/components/MDXComponent';
 
 export default function Post(props: MDXDate) {
   const { code, frontmatter } = props;
@@ -17,7 +17,7 @@ export default function Post(props: MDXDate) {
       </Head>
 
       <main className="px-4 sm:px-0 dark:bg-slate-900">
-        <MDXMarkdown code={code} />
+        <MDXComponent code={code} />
       </main>
     </>
   );

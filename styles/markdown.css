@@ -1,3 +1,18 @@
 .footnotes .data-footnote-backref {
   text-decoration: none;
 }
+
+h2 {
+  position: relative;
+}
+
+h2:hover .icon-link:before {
+  display: inline-block;
+  position: absolute;
+  content: '#';
+  font-size: 16px;
+  right: 0;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+  color: gray;
+}
